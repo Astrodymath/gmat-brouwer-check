@@ -1,0 +1,26 @@
+%  Osculating -> BrouwerMeanLong near the critical inclination 63.4 deg (GMAT R2026a).
+%  An osculating Molniya state (Keplerian elements) is converted to BrouwerMeanLong and to BrouwerMeanShort.
+%  Results: in the message window, and in BL_inverse_63.txt in GMAT's output folder.
+
+Create Spacecraft Osc;
+Osc.DateFormat = UTCGregorian;
+Osc.Epoch = '01 Jan 2000 12:00:00.000';
+Osc.CoordinateSystem = EarthMJ2000Eq;
+Osc.DisplayStateType = Keplerian;
+Osc.SMA  = 26600;
+Osc.ECC  = 0.74;
+Osc.INC  = 63.4;
+Osc.RAAN = 20;
+Osc.AOP  = 270;
+Osc.TA   = 30;
+
+Create ReportFile Out;
+Out.Filename = 'BL_inverse_63.txt';
+Out.Precision = 10;
+Out.WriteHeaders = true;
+
+BeginMissionSequence;
+Report Out Osc.BrouwerShortSMA Osc.BrouwerShortECC Osc.BrouwerShortINC Osc.BrouwerShortAOP;
+Write Osc.BrouwerShortSMA Osc.BrouwerShortECC Osc.BrouwerShortINC;
+Report Out Osc.BrouwerLongSMA Osc.BrouwerLongECC Osc.BrouwerLongINC Osc.BrouwerLongAOP;
+Write Osc.BrouwerLongSMA Osc.BrouwerLongECC Osc.BrouwerLongINC;

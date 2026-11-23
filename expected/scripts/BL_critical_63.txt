@@ -1,0 +1,6 @@
+MeanShort.Earth.SMA       MeanShort.Earth.ECC       MeanShort.EarthMJ2000Eq.INC   MeanShort.EarthMJ2000Eq.RAAN   MeanShort.EarthMJ2000Eq.AOP   MeanShort.Earth.MA        
+26626.41197               0.7402080837              63.40448819                   19.97225984                    270.0083297                   9.985415414               
+MeanLong.Earth.SMA        MeanLong.Earth.ECC        MeanLong.EarthMJ2000Eq.INC   MeanLong.EarthMJ2000Eq.RAAN   MeanLong.EarthMJ2000Eq.AOP   MeanLong.Earth.MA         
+26626.41197               0.7402080598              63.4                         20                            329.966005                   10                        
+dr_km                     
+10147.90449               

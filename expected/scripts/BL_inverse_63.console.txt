@@ -1,0 +1,10 @@
+2026-11-21 11:50:35 GMAT Moderator successfully created core engine
+26662.34760542199
+0.7405860341750856
+63.40596166114632
+Warning: For BrouwserMeanLong, when 58.80 DEG < INC < 65.78 DEG, or 114.22 DEG < INC < 121.2DEG, there is a possible inaccuracy due to singularity related with critical angle.
+Warning: Mean inclination is close to critical inclination 63 or 117 DEG. There is a possible inaccuracy.
+Utility Exception:  while converting from the BrouwerMeanLong to the Cartesian, an error has been encountered. BrouwerMeanLong is applicable only if mean ECC is smaller than 0.99.
+ This error occurred on line 25 of file: "scripts/BL_inverse_63.script"
+ *** Mission run failed.
+Console Application Execution Failed: Moderator::RunMission failed

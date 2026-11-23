@@ -1,0 +1,26 @@
+1. BL_critical_63: mean (26600 km, 0.74, 63.4 deg, RAAN 20, AOP 270, MA 10 deg) -> osculating
+   GMAT BrouwerMeanShort    a 26626.411967 km, e 0.740208084, i 63.404488194, RAAN 19.972259838, AOP 270.0083296976, MA 9.985415414
+   GMAT BrouwerMeanLong     a 26626.411967 km, e 0.740208060, i 63.400000000, RAAN 20.000000000, AOP 329.9660049501, MA 10.000000000; distance to Short 10147.904485 km
+   fix BrouwerMeanLong      a 26626.411967 km, e 0.739989637, i 63.414740726, RAAN 19.972263856, AOP 270.0083299855, MA 9.985411109; distance to Short 10.481129 km
+   check (bl_numpy)         a 26626.411967 km, e 0.739989637, i 63.414740726, RAAN 19.972263856, AOP 270.0083299855, MA 9.985411109; distance to fix 5.3e-09 m
+                            (1/(1-5cos^2 i) = -409.668, T2 = -0.244028)
+2. BL_critical_116: mean (26600 km, 0.74, 116.5 deg, RAAN 20, AOP 100, MA 50 deg) -> osculating
+   GMAT BrouwerMeanShort    a 26599.921100 km, e 0.739981017, i 116.499168424, RAAN 20.021616737, AOP 99.9981549977, MA 50.004465540
+   GMAT BrouwerMeanLong     input to ASin = 1.16810405881151 > 1: GMAT throws
+   fix BrouwerMeanLong      a 26599.921100 km, e 0.740236554, i 116.511117645, RAAN 20.027424851, AOP 99.9929790660, MA 50.006947591; distance to Short 13.521440 km
+   check (bl_numpy)         a 26599.921100 km, e 0.740236554, i 116.511117645, RAAN 20.027424851, AOP 99.9929790660, MA 50.006947591; distance to fix 1.9e-08 m
+3. BL_inverse_63: osculating Keplerian (26600 km, 0.74, 63.4 deg, RAAN 20, AOP 270, TA 30 deg) -> mean
+   GMAT BrouwerMeanShort    a 26662.347605 km, e 0.740586034, i 63.405961661, RAAN 20.018474247, AOP 270.0428663753, MA 3.121195702
+                            (6 iterations; GmatConsole prints a 26662.34760542199, e 0.7405860341750856, i 63.40596166114632)
+   GMAT BrouwerMeanLong     throws (see BL_inverse_63.script)
+   fix BrouwerMeanLong      a 26662.347104 km, e 0.740803572, i 63.395686951, RAAN 20.018513974, AOP 270.0428918042, MA 3.121200532
+                            (6 iterations; round trip back to osculating: 3.29e-09 m)
+   check (bl_numpy)         a 26662.347104 km, e 0.740803572, i 63.395686951, RAAN 20.018513974, AOP 270.0428918042, MA 3.121200532; distance to fix 2.8e-08 m
+4. One day: |osculating from the mean elements advanced at the secular rates - numerical integration|
+   BL_critical_63   fix     0.039 km   GMAT BrouwerMeanLong   1212.222 km
+   BL_critical_116  fix     0.018 km   GMAT BrouwerMeanLong throws
+5. The fix over a grid, 3 random angle sets per point: max |position difference|
+   fix vs check (bl_numpy), i = 62-65 and 115.5-117.6 deg in steps of 0.01 deg: 3.4e-07 m
+   fix vs check (bl_numpy), i = 1-175 deg in steps of 0.5 deg:                   2.7e-07 m
+   fix vs GMAT as is, i = 1-45, 80-100, 140-175 deg (far from the critical band): 4.0e-08 m
+   (9 orbits, a = 7000-42164 km, e = 0.0003-0.74)

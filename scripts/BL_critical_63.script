@@ -1,0 +1,40 @@
+%  BrouwerMeanLong near the critical inclination 63.4 deg (GMAT R2026a).
+%  The same mean elements are given once as BrouwerMeanShort and once as BrouwerMeanLong.
+%  Results: in the message window, and in BL_critical_63.txt in GMAT's output folder.
+
+Create Spacecraft MeanShort;
+MeanShort.DateFormat = UTCGregorian;
+MeanShort.Epoch = '01 Jan 2000 12:00:00.000';
+MeanShort.CoordinateSystem = EarthMJ2000Eq;
+MeanShort.DisplayStateType = BrouwerMeanShort;
+MeanShort.BrouwerShortSMA  = 26600;
+MeanShort.BrouwerShortECC  = 0.74;
+MeanShort.BrouwerShortINC  = 63.4;
+MeanShort.BrouwerShortRAAN = 20;
+MeanShort.BrouwerShortAOP  = 270;
+MeanShort.BrouwerShortMA   = 10;
+
+Create Spacecraft MeanLong;
+MeanLong.DateFormat = UTCGregorian;
+MeanLong.Epoch = '01 Jan 2000 12:00:00.000';
+MeanLong.CoordinateSystem = EarthMJ2000Eq;
+MeanLong.DisplayStateType = BrouwerMeanLong;
+MeanLong.BrouwerLongSMA  = 26600;
+MeanLong.BrouwerLongECC  = 0.74;
+MeanLong.BrouwerLongINC  = 63.4;
+MeanLong.BrouwerLongRAAN = 20;
+MeanLong.BrouwerLongAOP  = 270;
+MeanLong.BrouwerLongMA   = 10;
+
+Create Variable dr_km;
+Create ReportFile Out;
+Out.Filename = 'BL_critical_63.txt';
+Out.Precision = 10;
+Out.WriteHeaders = true;
+
+BeginMissionSequence;
+dr_km = sqrt((MeanLong.EarthMJ2000Eq.X - MeanShort.EarthMJ2000Eq.X)^2 + (MeanLong.EarthMJ2000Eq.Y - MeanShort.EarthMJ2000Eq.Y)^2 + (MeanLong.EarthMJ2000Eq.Z - MeanShort.EarthMJ2000Eq.Z)^2);
+Report Out MeanShort.Earth.SMA MeanShort.Earth.ECC MeanShort.EarthMJ2000Eq.INC MeanShort.EarthMJ2000Eq.RAAN MeanShort.EarthMJ2000Eq.AOP MeanShort.Earth.MA;
+Report Out MeanLong.Earth.SMA MeanLong.Earth.ECC MeanLong.EarthMJ2000Eq.INC MeanLong.EarthMJ2000Eq.RAAN MeanLong.EarthMJ2000Eq.AOP MeanLong.Earth.MA;
+Report Out dr_km;
+Write MeanShort.EarthMJ2000Eq.AOP MeanLong.EarthMJ2000Eq.AOP dr_km;

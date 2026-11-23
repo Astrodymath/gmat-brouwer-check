@@ -1,0 +1,3 @@
+Osc.BrouwerShortSMA       Osc.BrouwerShortECC       Osc.BrouwerShortINC       Osc.BrouwerShortAOP       
+26662.34761               0.7405860342              63.40596166               270.0428664               
+Osc.BrouwerLongSMA        Osc.BrouwerLongECC        Osc.BrouwerLongINC        Osc.BrouwerLongAOP        

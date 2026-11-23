@@ -1,0 +1,4 @@
+2026-11-21 11:50:35 GMAT Moderator successfully created core engine
+1: scripts/BL_critical_116.script: **** ERROR **** Interpreter Exception: The Spacecraft "MeanLong" failed to set CoordinateSystem: The input "1.16810405881151" to ASin() is not within -1.0 and 1.0.
+ERROR!!!!!! ---- Console Application Execution Failed: Errors were found in the script named "scripts/BL_critical_116.script"
+Console Application Execution Failed: Errors were found in the script named "scripts/BL_critical_116.script"

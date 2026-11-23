@@ -1,0 +1,21 @@
+1. Mean (26600 km, 0.74, 63.4 deg, RAAN 20, AOP 270, MA 10 deg) -> osculating
+   BrouwerMeanShort: a 26626.412 km, e 0.740208, i 63.40449, RAAN 19.97226, AOP 270.00833, MA 9.98542 deg
+   BrouwerMeanLong : a 26626.412 km, e 0.740208, i 63.40000, RAAN 20.00000, AOP 329.96600, MA 10.00000 deg
+2. Long - Short at the same mean elements, max position difference over 200 random angles
+   MOL 63.4   bisubc      6.29   max |dr| =   91519.1 km
+   MOL 63.0   bisubc    0.0431   max |dr| =   92028.0 km
+   HEO 63.4   bisubc      1.85   max |dr| =   59958.1 km
+   LEOe 63.4  bisubc     0.612   max |dr| =   18390.7 km
+   MOL 55.0   bisubc  0.000311   max |dr| =      47.6 km
+3. Scan of i in steps of 0.01 deg (3 angle sets): where |Long - Short| > 1000 km, and where Long throws
+   MOL e=0.74   55-72 deg: > 1000 km at 59.92-65.74 deg; exception at none
+   MOL e=0.74   108-125 deg: > 1000 km at 115.98-117.15 deg; exception at 116.41-116.72 deg (e.g. The input "1.02998640678308" to ASin() is not within -1.0 an...)
+   LEOe e=0.15  55-72 deg: > 1000 km at 62.52-64.24 deg; exception at none
+   LEOe e=0.15  108-125 deg: > 1000 km at 116.42-116.71 deg; exception at 116.45-116.68 deg (e.g. The input "1.01023278771507" to ASin() is not within -1.0 an...)
+   LEO e=0.01   55-72 deg: > 1000 km at 63.38-63.49 deg; exception at none
+   LEO e=0.01   108-125 deg: > 1000 km at none; exception at 116.53-116.60 deg (e.g. The input "1.00360475456875" to ASin() is not within -1.0 an...)
+4. Cartesian -> BrouwerMeanLong (CartesianToBrouwerMeanLong) of an osculating state
+   MOL 63.4   Utility Exception: while converting from the BrouwerMeanLong to the Cartesian, an error has been encountered. BrouwerMeanLong is applicable only if mean ECC is smaller than 0.99.
+   HEO 63.4   Utility Exception: while converting from the BrouwerMeanLong to the Cartesian, an error has been encountered. BrouwerMeanLong is applicable only if mean ECC is smaller than 0.99.
+   LEOe 63.4  Utility Exception: While converting from the BrouwerMeanLong to the Cartesian, an error has been encountered. BrouwerMeanLong is applicable only if RadPer is larger than 3000km.
+   LEOe 60.0  converges: mean a 8000.012 km, e 0.1511, i 59.995 deg

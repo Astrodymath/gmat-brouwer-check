@@ -1,0 +1,6 @@
+2026-11-21 11:50:35 GMAT Moderator successfully created core engine
+Warning: Mean inclination is close to critical inclination 63 or 117 DEG. There is a possible inaccuracy.
+270.0083296976459
+329.9660049501227
+10147.90448549456
+Mission run completed.

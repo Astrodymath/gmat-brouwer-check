@@ -1,0 +1,23 @@
+A. mean -> osculating: max |position difference| over 100 random (RAAN, AOP, M), metres
+   theory = first-order Brouwer-Lyddane map of bl_numpy.py (raw critical divisor, GMAT constants)
+orbit       Short: GMAT-transcr.  Long: GMAT-transcr.  Short: GMAT-theory  Long: GMAT-theory  Long-Short in GMAT  branch
+LEO                     2.93e-08             2.96e-08            3.42e-08           3.81e-08            1.32e+04  -
+LEOe                    2.33e-08             2.13e-08            3.66e-08           3.86e-08            1.06e+04  -
+SSO                      2.6e-08             2.67e-08             2.6e-08           3.42e-08            1.59e+04  -
+GNSS                    1.16e-07              1.4e-07            1.86e-07           1.57e-07            1.25e+04  -
+GTO                     1.11e-07             1.21e-07            1.67e-07           1.74e-07            1.85e+04  -
+GEO                     2.43e-07             1.87e-07            2.32e-07           2.03e-07                13.1  -
+HEO                     9.64e-08             1.05e-07            1.05e-07           1.67e-07            1.26e+04  -
+EQ                      1.64e-08             1.97e-08            3.62e-08           3.54e-08                 123  -
+TUN                     2.81e-08             3.14e-08            5.51e-08           6.37e-08             5.5e+04  -
+MOL 63.4                1.38e-07             1.05e-07             1.4e-07           8.92e+07            9.22e+07  taken
+MOL 63.0                1.58e-07              9.7e-08            2.28e-07           8.88e+07            8.89e+07  taken
+LEOe 63.4               3.66e-08             1.63e-08             5.3e-08           1.82e+07            1.83e+07  taken
+HEO 63.4                1.06e-07             4.38e-08            1.25e-07           5.91e+07            5.86e+07  taken
+
+B. osculating -> BrouwerMeanLong in GMAT, then back: |position difference| of the round trip, metres
+MOL 63.4   exception: Utility Exception: while converting from the BrouwerMeanLong to the Cartesian, an error has been encountered. BrouwerMeanLong is applicable only if mean ECC is smaller than 0.99.
+HEO 63.4   exception: Utility Exception: while converting from the BrouwerMeanLong to the Cartesian, an error has been encountered. BrouwerMeanLong is applicable only if mean ECC is smaller than 0.99.
+LEOe 63.4  exception: Utility Exception: While converting from the BrouwerMeanLong to the Cartesian, an error has been encountered. BrouwerMeanLong is applicable only if RadPer is larger than 3000km.
+LEOe 60    mean a   8000.000 km  e 0.1500  i 60.000 deg   round trip |dr|          0.001 m
+MOL 55     mean a  26600.000 km  e 0.7400  i 55.000 deg   round trip |dr|          0.047 m
